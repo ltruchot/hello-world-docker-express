@@ -7,7 +7,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:${APP_HOST}"
-      - "traefik.port=80"
+      - "traefik.port=3000"
       - "traefik.docker.network=proxy"
       
     networks: 
