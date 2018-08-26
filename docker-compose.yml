@@ -3,9 +3,9 @@ services:
   web:
     build: .
     ports:
-      - "3000:8080"
+      - "80:8080"
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:${APP_HOST}"
-      - "traefik.port=3000"
+      - "traefik.port=80"
       - "traefik.frontend.entryPoints=http"
