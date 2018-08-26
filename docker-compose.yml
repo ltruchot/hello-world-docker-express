@@ -5,8 +5,5 @@ services:
     ports:
       - "3000:8080"
     labels:
-      - "traefik.port=3000"
-      - "traefik.backend=web"
-      - "traefik.protocol=https"
-      - "traefik.frontend.entryPoints=https"
-      - "traefik.frontend.rule=Host:committers.ngo"
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:${APP_HOST}"
