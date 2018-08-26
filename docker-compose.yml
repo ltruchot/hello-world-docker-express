@@ -8,3 +8,5 @@ services:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:${APP_HOST}"
       - "traefik.port=80"
+    networks:
+      - traefik
