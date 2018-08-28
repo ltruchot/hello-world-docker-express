@@ -7,12 +7,12 @@ services:
     labels:
       traefik.enable: "true"
       traefik.frontend.rule: "Host:${APP_HOST},www.${APP_HOST}"
-      # traefik.frontend.redirect.regex: "^https?://www.${APP_HOST}/(.*)"
-      # traefik.frontend.redirect.replacement: "https://${APP_HOST}/$${1}"
+      traefik.frontend.redirect.regex: "^https?://www.${APP_HOST}/(.*)"
+      traefik.frontend.redirect.replacement: "https://${APP_HOST}/$${1}"
       # traefik.protocol: "https"
       traefik.frontend.entryPoints: "http,https"
       traefik.frontend.redirect.entryPoint: "https"
-      traefik.port: "443"
+      traefik.port: "3000"
       traefik.docker.network: "proxy"      
     networks: 
       - proxy
