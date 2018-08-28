@@ -6,10 +6,10 @@ services:
       - "3000:3000"
     labels:
       traefik.enable: "true"
-      traefik.frontend.rule: "Host:${APP_HOST}"
-      traefik.frontend.entryPoints: "http,https"
+      traefik.frontend.rule: "Host:${APP_HOST}"      
       traefik.protocol: "https"
-      traefik.frontend.redirect.entryPoint: "https"
+      # traefik.frontend.entryPoints: "http,https"
+      # traefik.frontend.redirect.entryPoint: "https"
       traefik.port: "3000"
       traefik.docker.network: "proxy"      
     networks: 
