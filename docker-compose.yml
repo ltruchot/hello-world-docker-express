@@ -13,7 +13,7 @@ services:
       traefik.frontend.redirect.permanent: "true"
       traefik.frontend.entryPoints: "http,https"
       # traefik.frontend.redirect.entryPoint: "https"
-      traefik.port: "3000" 
+      traefik.port: "${APP_PORT}" 
     networks: 
       - proxy
 networks:
