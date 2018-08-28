@@ -6,8 +6,10 @@ services:
       - "3000:3000"
     labels:
       traefik.enable: "true"
-      traefik.frontend.rule: "Host:${APP_HOST}"      
-      traefik.protocol: "https"
+      traefik.frontend.rule: "Host:${APP_HOST},www.{APP_HOST}"
+      traefik.frontend.redirect.regex: ^https?://www.{APP_HOST}/(.*)
+      traefik.frontend.redirect.replacement: https://{APP_HOST}/$${1}
+      # traefik.protocol: "https"
       traefik.frontend.entryPoints: "http,https"
       traefik.frontend.redirect.entryPoint: "https"
       traefik.port: "3000"
